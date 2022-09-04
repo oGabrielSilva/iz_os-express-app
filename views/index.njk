@@ -1,0 +1,76 @@
+{% extends 'base.njk' %} {% block body %}
+<section class="display-flex" style="padding: var(--p3) 0; min-height: 100vh">
+  <main class="main-center bg-light main-shadow">
+    <button id="button-change-theme" class="button-change-theme-main-sign">
+      <img alt="Ícone para alterar o tema" width="30px" height="30px" src="/images/icon/moon.svg" />
+    </button>
+    <div class="display-flex-column user-select">
+      <img
+        draggable="false"
+        id="app-icon"
+        src="/images/icon/icon.svg"
+        width="100px"
+        height="100px"
+        alt="Ícone do aplicativo"
+      />
+      <h1>Izanami<span class="color-variant user-select">OS</span></h1>
+      <p class="margin-top-2" id="sign-text">
+        Izanami é uma plataforma para você criar e compartilhar seus personagens, histórias e
+        livros! Seja história real, seja rpg.
+      </p>
+      <form id="sign-in">
+        <div>
+          <label for="email">
+            <span>E-mail</span>
+            <input placeholder="john.doe@izanami.os" type="email" id="email" />
+            <small class="small">E-mail incorreto</small>
+          </label>
+        </div>
+        <div>
+          <label for="password">
+            <span>Senha</span>
+            <input placeholder="Pelo menos 8 caracteres" type="password" id="password" />
+            <small class="small">Senha incorreta</small>
+          </label>
+        </div>
+        <button type="submit" id="submit" class="btn-variant" style="margin-top: var(--p3)">
+          <span>Entrar</span>
+        </button>
+        <div class="display-flex margin-top-2">
+          <div style="height: 1px; width: 50%; border-top: 1px solid var(--text)"></div>
+          <span style="margin: 0 10px">Ou</span>
+          <div style="height: 1px; width: 50%; border-top: 1px solid var(--text)"></div>
+        </div>
+        <div class="display-flex margin-top-2">
+          <button id="sign-in-google" type="button">
+            <img
+              width="40px"
+              height="40px"
+              src="/images/icon/google.svg"
+              alt="Entrar com o Google"
+            />
+          </button>
+        </div>
+        <div class="display-flex margin-top-2">
+          <div style="height: 1px; width: 100%; border-top: 1px solid var(--text)"></div>
+        </div>
+        <button
+          type="button"
+          id="forgot-password"
+          style="margin-top: var(--p3); margin-left: auto; margin-right: auto; display: block"
+        >
+          <span>Esqueceu a senha?</span>
+        </button>
+        <button
+          type="button"
+          id="dont-have-account"
+          style="margin-top: var(--p3); margin-left: auto; margin-right: auto; display: block"
+        >
+          <span>Ainda não possui conta? <span class="color-variant">Crie já</span></span>
+        </button>
+      </form>
+    </div>
+  </main>
+</section>
+<div id="modal-forgot-password">{% include 'includes/modal.njk' %}</div>
+{% endblock %}

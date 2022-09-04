@@ -1,0 +1,85 @@
+import Constants from '../Util/Constants';
+import Extra from '../Util/Extra';
+
+export type TColors = {
+  bg: string;
+  bgLight: string;
+  textTitle: string;
+  textOnVariant: string;
+  text: string;
+  variant: string;
+
+  mode: 'light' | 'dark';
+};
+
+class Colors {
+  private light: TColors = {
+    bg: '#b2b7c6',
+    bgLight: '#d9d9d9',
+    textTitle: '#0a0a0a',
+    textOnVariant: '#fcfcfc',
+    text: '#2e2e2e',
+    variant: '#ff0000',
+
+    mode: 'light',
+  };
+
+  private dark: TColors = {
+    bg: '#12141b',
+    bgLight: '#232838',
+    textTitle: '#fcfcfc',
+    textOnVariant: '#fcfcfc',
+    text: '#bdbdbd',
+    variant: '#ff0000',
+
+    mode: 'dark',
+  };
+
+  public getLight() {
+    return this.light;
+  }
+
+  public getDark() {
+    return this.dark;
+  }
+
+  public static getInstance() {
+    const theme = localStorage.getItem(Constants.getThemeId());
+    if (theme === null) {
+      localStorage.setItem(Constants.getThemeId(), Constants.getThemeLightId());
+      return new Colors().getLight();
+    } else if (theme === Constants.getThemeLightId()) return new Colors().getLight();
+    return new Colors().getDark();
+  }
+
+  public static initTheme() {
+    Colors.changeColorsRoot();
+    Extra.onThemeChange();
+  }
+
+  public static setTheme() {
+    const theme = localStorage.getItem(Constants.getThemeId());
+    if (!theme) {
+      localStorage.setItem(Constants.getThemeId(), Constants.getThemeDarkId());
+      Colors.changeColorsRoot();
+    } else if (theme === Constants.getThemeDarkId()) {
+      localStorage.setItem(Constants.getThemeId(), Constants.getThemeLightId());
+      Colors.changeColorsRoot();
+    } else {
+      localStorage.setItem(Constants.getThemeId(), Constants.getThemeDarkId());
+      Colors.changeColorsRoot();
+    }
+  }
+
+  private static changeColorsRoot() {
+    const root = document.documentElement;
+    const colors = Object.values(Colors.getInstance());
+    Object.keys(Colors.getInstance()).forEach((c, i) => {
+      const color = '--' + c;
+      root.style.setProperty(color, colors[i]);
+    });
+    Extra.onThemeChange();
+  }
+}
+
+export default Colors;
