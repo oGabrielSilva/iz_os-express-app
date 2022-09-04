@@ -1,0 +1,87 @@
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+.btn-variant {
+  background: var(--variant);
+  padding: var(--p1) var(--p3);
+  border-radius: var(--r2);
+  min-width: 100%;
+}
+
+.btn-variant * {
+  color: var(--textOnVariant);
+}
+
+.button-change-theme-main-sign {
+  transition: 0.5s ease;
+}
+
+.user-select {
+  user-select: none;
+}
+
+.margin-top-1 {
+  margin-top: var(--p1);
+}
+
+.margin-top-2 {
+  margin-top: var(--p2);
+}
+
+.margin-top-3 {
+  margin-top: var(--p3);
+}
+
+.padding-3 {
+  padding: var(--p3);
+}
+
+.radius-1 {
+  border-radius: var(--r1);
+}
+
+.radius-2 {
+  border-radius: var(--r2);
+}
+
+.bg {
+  background: var(--bg);
+}
+
+.bg-light {
+  background: var(--bgLight);
+}
+
+.color-variant {
+  color: var(--variant);
+}
+
+.display-flex,
+.display-flex-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-flex-column {
+  flex-direction: column;
+}
+
+.main-shadow {
+  box-shadow: 0px 1px 7px 0px var(--black);
+}
+
+.main-center {
+  width: 90vw;
+  max-width: 900px;
+  min-height: 500px;
+  border-radius: var(--r1);
+}
+
+.button-modal-close {
+  position: fixed;
+  top: var(--p3);
+  right: var(--p3);
+  background: transparent;
+}

@@ -1,0 +1,119 @@
+:root {
+  --black: #111111;
+  --bg: #b2b7c6;
+  --bgLight: #d9d9d9;
+  --textTitle: #0a0a0a;
+  --textOnVariant: #fcfcfc;
+  --text: #2e2e2e;
+  --variant: #ff0000;
+  --p1: 0.5rem;
+  --p2: 1rem;
+  --p3: 2rem;
+  --r1: 4px;
+  --r2: 8px;
+  --r3: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  font-size: 14px;
+  transition: 0.5s ease-in;
+}
+
+body * {
+  color: var(--text);
+}
+
+main {
+  padding: var(--p2) var(--p3);
+  transition: 0.5s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--textTitle);
+}
+
+button {
+  background: var(--bgLight);
+  cursor: pointer;
+  transition: 0.4s ease-out;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+button:disabled {
+  background: #751222;
+  cursor: default;
+}
+
+button:disabled:hover {
+  opacity: 1;
+}
+
+label {
+  display: grid;
+}
+
+label span {
+  margin-bottom: var(--p1);
+  margin-top: var(--p2);
+  font-weight: 500;
+}
+
+input {
+  background: var(--bg);
+  padding: var(--p1) var(--p2);
+  border-radius: var(--r2);
+  width: 100%;
+}
+
+form {
+  margin: var(--p2) 0;
+  width: 80%;
+  max-width: 700px;
+}
+
+small {
+  color: var(--variant);
+  margin-top: var(--p1);
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(00, 00, 00, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.5s ease;
+}
+
+.out-screen-left {
+  left: 200vw;
+}
+
+.invisible {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
