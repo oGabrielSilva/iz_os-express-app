@@ -1,5 +1,8 @@
+import Auth from '../Auth/Auth';
 import Colors from '../resources/Colors';
 import HtmlConstants from './HtmlConstants';
+
+type WindowLocation = 'index' | 'sign-up' | 'home';
 
 class Extra {
   private constructor() {}
@@ -60,6 +63,30 @@ class Extra {
           image.src = mode === 'light' ? '/images/icon/icon.svg' : '/images/icon/icon-dark.svg';
         }
       });
+  }
+
+  public static onAuthChanged() {
+    const value: WindowLocation = (
+      document.querySelector(HtmlConstants.getWindowLocation()) as HTMLInputElement
+    ).value as WindowLocation;
+
+    const redirectToHome = () => {
+      if (!!Auth.getUser()) window.location.href = '/home';
+    };
+
+    switch (value) {
+      case 'index':
+        redirectToHome();
+        return;
+      case 'sign-up':
+        redirectToHome();
+        return;
+      case 'home':
+        if (!Auth.getUser()) window.location.href = '/';
+        return;
+      default:
+        return;
+    }
   }
 }
 

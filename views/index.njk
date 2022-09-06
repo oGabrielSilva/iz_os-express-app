@@ -44,6 +44,7 @@
         <div class="display-flex margin-top-2">
           <button id="sign-in-google" type="button">
             <img
+              draggable="false"
               width="40px"
               height="40px"
               src="/images/icon/google.svg"
@@ -61,16 +62,20 @@
         >
           <span>Esqueceu a senha?</span>
         </button>
-        <button
-          type="button"
-          id="dont-have-account"
-          style="margin-top: var(--p3); margin-left: auto; margin-right: auto; display: block"
-        >
-          <span>Ainda não possui conta? <span class="color-variant">Crie já</span></span>
-        </button>
+        <a href="/sign-up">
+          <button
+            type="button"
+            id="dont-have-account"
+            style="margin-top: var(--p3); margin-left: auto; margin-right: auto; display: block"
+          >
+            <span>Ainda não possui conta? <span class="color-variant">Crie já</span></span>
+          </button>
+        </a>
       </form>
     </div>
   </main>
+  <input type="hidden" readonly value="index" id="wl" />
 </section>
 <div id="modal-forgot-password">{% include 'includes/modal.njk' %}</div>
+<div id="modal-loading-window">{% include 'includes/window-loading.njk' %}</div>
 {% endblock %}

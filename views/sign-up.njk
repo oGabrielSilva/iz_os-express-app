@@ -1,0 +1,55 @@
+{% extends 'base.njk' %} {% block body %}
+<section class="display-flex" style="padding: var(--p3) 0; min-height: 100vh">
+  <main class="main-center bg-light main-shadow">
+    <button id="button-change-theme" class="button-change-theme-main-sign">
+      <img alt="Ícone para alterar o tema" width="30px" height="30px" src="/images/icon/moon.svg" />
+    </button>
+    <div class="display-flex-column user-select">
+      <img
+        draggable="false"
+        id="app-icon"
+        src="/images/icon/icon.svg"
+        width="100px"
+        height="100px"
+        alt="Ícone do aplicativo"
+      />
+      <h1>Izanami<span class="color-variant user-select">OS</span></h1>
+      <p class="margin-top-2" id="sign-text">
+        Cadastre-se na Izanami e faça parte da nossa comunidade. Crie e gerencie personagens,
+        histórias e suas inúmeras possibilidades. Adicione até magia se preferir
+      </p>
+      <form id="sign-up">
+        <div>
+          <label for="email">
+            <span>E-mail</span>
+            <input placeholder="john.doe@izanami.os" type="email" id="email" />
+            <small class="small">E-mail é necessário</small>
+          </label>
+        </div>
+        <div>
+          <label for="password">
+            <span>Senha</span>
+            <input placeholder="Pelo menos 8 caracteres" type="password" id="password" />
+            <small class="small">Senha precisa ter 8 caracteres</small>
+          </label>
+        </div>
+        <button type="submit" id="submit" class="btn-variant" style="margin-top: var(--p3)">
+          <span>Cadastrar-se</span>
+        </button>
+        <a href="/">
+          <button
+            type="button"
+            id="already-have-account"
+            style="margin-top: var(--p3); margin-left: auto; margin-right: auto; display: block"
+          >
+            <span>Já possui uma conta? <span class="color-variant">Faça login</span></span>
+          </button>
+        </a>
+      </form>
+    </div>
+  </main>
+  <input type="hidden" value="sign-up" readonly id="wl" />
+</section>
+<div id="modal-loading-window">{% include 'includes/window-loading.njk' %}</div>
+
+{% endblock %}

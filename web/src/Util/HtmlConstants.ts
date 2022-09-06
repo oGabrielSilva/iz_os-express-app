@@ -1,18 +1,53 @@
 class HtmlConstants {
   private appIconId = '#app-icon';
-
   private signInFormId = 'sign-in';
   private emailInputId = '#email';
+  private emailInputClass = '.email-input';
   private passwordInputId = '#password';
   private submitButtonId = '#submit';
+  private buttonSubmitClassModal = '.button-submit-modal';
   private forgotPasswordButtonId = '#forgot-password';
-
   private containerModalForgotPassword = '#modal-forgot-password';
   private modaElement = '.modal';
   private buttonModalClose = '.button-modal-close';
   private classOutScreenLeft = 'out-screen-left';
   private classSignInGoogle = '#sign-in-google';
   private buttonChangeThemeId = '#button-change-theme';
+  private classFormModal = 'modal-form';
+  private googleSignInId = '#sign-in-google';
+  private dontHaveAccountButtonId = '#dont-have-account';
+  private windowLoadingClass = '.window-loading';
+  private windowLocation = '#wl';
+  private signUpFormId = 'sign-up';
+  private alreadyHaveAccountButtonId = '#already-have-account';
+
+  public getAlreadyHaveAccountButtonId() {
+    return this.alreadyHaveAccountButtonId;
+  }
+
+  public getSignUpFormId() {
+    return this.signUpFormId;
+  }
+
+  public getWindowLocation() {
+    return this.windowLocation;
+  }
+
+  public getWindowLoadingClass() {
+    return this.windowLoadingClass;
+  }
+
+  public getDontHaveAccountButtonId() {
+    return this.dontHaveAccountButtonId;
+  }
+
+  public getGoogleSignInId() {
+    return this.googleSignInId;
+  }
+
+  public getClassFormModal() {
+    return this.classFormModal;
+  }
 
   public getButtonChangeThemeId() {
     return this.buttonChangeThemeId;
@@ -46,8 +81,16 @@ class HtmlConstants {
     return this.submitButtonId;
   }
 
+  public getButtonSubmitClassModal() {
+    return this.buttonSubmitClassModal;
+  }
+
   public getEmailInputId() {
     return this.emailInputId;
+  }
+
+  public getEmailInputClass() {
+    return this.emailInputClass;
   }
 
   public getPasswordInputId() {

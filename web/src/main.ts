@@ -1,3 +1,4 @@
+import Auth from './Auth/Auth';
 import Forms from './Module/Forms';
 import Colors from './resources/Colors';
 import Extra from './Util/Extra';
@@ -18,3 +19,5 @@ if (document.querySelector('#sign-text')) {
 Forms.setFormsConfig();
 Colors.initTheme();
 Extra.setModal();
+
+Auth.init();

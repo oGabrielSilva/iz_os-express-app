@@ -95,25 +95,3 @@ small {
   font-weight: 500;
   font-size: 12px;
 }
-
-.modal {
-  height: 100vh;
-  width: 100vw;
-  background: rgba(00, 00, 00, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  transition: 0.5s ease;
-}
-
-.out-screen-left {
-  left: 200vw;
-}
-
-.invisible {
-  display: none !important;
-}
-
-.text-center {
-  text-align: center;
-}

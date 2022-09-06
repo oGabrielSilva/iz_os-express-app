@@ -21,7 +21,6 @@ app.use(router);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(resolve(__dirname, '..', 'dist', 'public')));
-console.log(resolve(__dirname, 'dist', 'public'));
 app.use(
   helmet({
     contentSecurityPolicy: {
