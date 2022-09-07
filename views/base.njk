@@ -29,7 +29,7 @@
     <title>{% if title %}{{ title }}{% else %}IzanamiOS{% endif %}</title>
   </head>
   <body>
-    {% block body %} {% endblock %}
+    {% block body %} {% endblock %} {% include 'includes/modal-alert.njk' %}
     <script src="/static/javascript/bundle.js" defer></script>
   </body>
 </html>

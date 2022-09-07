@@ -56,9 +56,11 @@ class Forms {
     const googleSignIn = form.querySelector(HtmlConstants.getGoogleSignInId());
     const dontHaveAccount = form.querySelector(HtmlConstants.getDontHaveAccountButtonId());
     const emailInput = form.querySelector(HtmlConstants.getEmailInputId()) as HTMLInputElement;
+
     const passwordInput = form.querySelector(
       HtmlConstants.getPasswordInputId()
     ) as HTMLInputElement;
+
     const submit = form.querySelector(HtmlConstants.getSubmitButtonId()) as HTMLButtonElement;
     const forgotPassword = form.querySelector(
       HtmlConstants.getForgotPasswordButtonId()
@@ -111,7 +113,7 @@ class Forms {
       }
     });
 
-    if (!!googleSignIn) googleSignIn.addEventListener('click', () => console.log('Google'));
+    if (!!googleSignIn) googleSignIn.addEventListener('click', () => Auth.google());
     if (!!dontHaveAccount) {
       dontHaveAccount.addEventListener('click', () => (window.location.href = '/sign-up'));
     }
@@ -126,9 +128,11 @@ class Forms {
     ]);
     const alreadyHaveAccount = form.querySelector(HtmlConstants.getAlreadyHaveAccountButtonId());
     const emailInput = form.querySelector(HtmlConstants.getEmailInputId()) as HTMLInputElement;
+
     const passwordInput = form.querySelector(
       HtmlConstants.getPasswordInputId()
     ) as HTMLInputElement;
+
     const submit = form.querySelector(HtmlConstants.getSubmitButtonId()) as HTMLButtonElement;
 
     const setButtonDisable = () => {

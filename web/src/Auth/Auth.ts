@@ -6,7 +6,9 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
+  signInWithRedirect,
 } from 'firebase/auth';
 import Extra from '../Util/Extra';
 import HtmlConstants from '../Util/HtmlConstants';
@@ -43,8 +45,7 @@ class Auth {
   }
 
   public sendEmailForgotPassword(email: string) {
-    this.getAuth();
-    sendPasswordResetEmail(this.auth, email);
+    sendPasswordResetEmail(this.getAuth(), email);
   }
 
   public async loginUser(email: string, password: string) {
@@ -74,6 +75,11 @@ class Auth {
   public async signOut() {
     await this.getAuth().signOut();
     window.location.href = '/';
+  }
+
+  public google() {
+    const provider = new GoogleAuthProvider();
+    signInWithRedirect(this.getAuth(), provider);
   }
 }
 

@@ -1,5 +1,6 @@
 import Auth from './Auth/Auth';
 import Forms from './Module/Forms';
+import ModalAlert from './Module/ModalAlert';
 import Colors from './resources/Colors';
 import Extra from './Util/Extra';
 import HtmlConstants from './Util/HtmlConstants';
@@ -21,3 +22,9 @@ Colors.initTheme();
 Extra.setModal();
 
 Auth.init();
+ModalAlert.init();
+setTimeout(
+  () =>
+    ModalAlert.openModal('Testando o modal de alert', null, true, true, () => console.log('Oiiie')),
+  3000
+);

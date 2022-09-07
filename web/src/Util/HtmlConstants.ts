@@ -20,6 +20,31 @@ class HtmlConstants {
   private windowLocation = '#wl';
   private signUpFormId = 'sign-up';
   private alreadyHaveAccountButtonId = '#already-have-account';
+  private modalAlertContainerClass = '.modal-alert-container';
+  private modalAlertBodyId = '#modal-body';
+  private modalAlertButtonCloseId = '#button-modal-alert-close';
+  private modalAlertButtonOKId = '#modal-alert-ok';
+  private modalAlertLoadingId = '#modal-alert-loading';
+
+  public getModalAlertLoadingId() {
+    return this.modalAlertLoadingId;
+  }
+
+  public getModalAlertButtonCloseId() {
+    return this.modalAlertButtonCloseId;
+  }
+
+  public getModalAlertButtonOKId() {
+    return this.modalAlertButtonOKId;
+  }
+
+  public getModalAlertBodyId() {
+    return this.modalAlertBodyId;
+  }
+
+  public getModalAlertContainerClass() {
+    return this.modalAlertContainerClass;
+  }
 
   public getAlreadyHaveAccountButtonId() {
     return this.alreadyHaveAccountButtonId;
