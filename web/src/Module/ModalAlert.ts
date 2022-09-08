@@ -18,46 +18,9 @@ class ModalAlert {
     private onConfirm = () => {}
   ) {}
 
-  public setBody(body: string) {
-    if (this.body) this.body.textContent = body;
-  }
-
   public init() {
     if (this.close) this.close.addEventListener('click', () => this.closeModal());
     if (this.ok) this.ok.addEventListener('click', () => this.closeModal());
-  }
-
-  public removeOK() {
-    if (this.ok) this.ok.classList.add('invisible');
-  }
-
-  public addOK() {
-    if (this.ok) this.ok.classList.remove('invisible');
-  }
-
-  public removeLoading() {
-    if (this.loading) this.loading.classList.add('invisible');
-  }
-
-  public addLoading() {
-    if (this.loading) this.loading.classList.remove('invisible');
-  }
-
-  public removeButtonClose() {
-    if (this.close) this.close.classList.add('invisible');
-  }
-
-  public addButtonClose() {
-    if (this.close) this.close.classList.remove('invisible');
-  }
-
-  public closeModal() {
-    if (this.container && this.close) {
-      this.container.style.left = '-200vw';
-      this.close.style.right = '200vw';
-    }
-    this.onConfirm();
-    this.resetOnConfirm();
   }
 
   public openModal(
@@ -79,6 +42,43 @@ class ModalAlert {
     if (buttonConfirm) this.addOK();
     else this.removeOK();
     if (typeof onConfirm === 'function' && !!onConfirm) this.setOnConfirm(onConfirm);
+  }
+
+  private setBody(body: string) {
+    if (this.body) this.body.textContent = body;
+  }
+
+  private removeOK() {
+    if (this.ok) this.ok.classList.add('invisible');
+  }
+
+  private addOK() {
+    if (this.ok) this.ok.classList.remove('invisible');
+  }
+
+  private removeLoading() {
+    if (this.loading) this.loading.classList.add('invisible');
+  }
+
+  private addLoading() {
+    if (this.loading) this.loading.classList.remove('invisible');
+  }
+
+  private removeButtonClose() {
+    if (this.close) this.close.classList.add('invisible');
+  }
+
+  private addButtonClose() {
+    if (this.close) this.close.classList.remove('invisible');
+  }
+
+  private closeModal() {
+    if (this.container && this.close) {
+      this.container.style.left = '-200vw';
+      this.close.style.right = '200vw';
+    }
+    this.onConfirm();
+    this.resetOnConfirm();
   }
 
   private setOnConfirm(onConfirm: () => void) {

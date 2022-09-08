@@ -148,7 +148,7 @@
 .modal-alert-container {
   position: fixed;
   background: rgba(00, 00, 00, 0.5);
-  transition: 1s ease-out;
+  transition: 0.7s ease-out;
   top: 0;
   left: -200vw;
   height: 100vh;
@@ -163,9 +163,84 @@
   padding: var(--p1) var(--p2);
   border-radius: var(--r1);
   background: var(--bgLight);
-  max-width: 85vw;
+  max-width: 500px;
+  margin: 0 var(--p1);
 }
 
 .modal-alert-body * {
   text-align: center;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: var(--textTitle);
+  margin: 0 5px;
+  opacity: 0.5;
+}
+
+.button-aside-menu,
+.button-aside-menu-selected {
+  width: 100%;
+  background: var(--bgLight);
+  border-radius: var(--p3);
+  padding: 5px var(--p2);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.button-aside-menu:hover {
+  background: var(--bg);
+  opacity: 0.7;
+}
+
+.button-aside-menu-selected {
+  padding: 5px var(--p3);
+  background: var(--bg);
+}
+
+.button-aside-menu-selected:hover {
+  opacity: 1;
+}
+
+.icon-button-aside-menu {
+  margin-right: var(--p2);
+}
+
+.aside-menu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -200vw;
+  z-index: 999;
+  transition: all 0.3s ease-out;
+  background: rgba(00, 00, 00, 0.5);
+}
+
+.nav-aside-menu {
+  background: var(--bgLight);
+  width: 75vw;
+  height: 100vh;
+  max-width: 400px;
+  padding: var(--p2);
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+
+.nav-aside-menu ul {
+  text-decoration: none;
+  list-style: none;
+}
+
+.nav-aside-menu ul li {
+  margin: var(--p1) 0;
+}
+
+.nav-aside-menu ul li span {
+  text-align: start;
 }

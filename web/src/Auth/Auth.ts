@@ -21,7 +21,9 @@ class Auth {
   private user: User | null;
 
   public init() {
-    this.windowLoading = document.querySelector(HtmlConstants.getWindowLoadingClass());
+    this.windowLoading = document.querySelector(
+      HtmlConstants.getWindowLoadingClass()
+    ) as HTMLDivElement;
     this.app = initializeApp(browser);
     this.auth = getAuth();
     this.config();
@@ -49,26 +51,30 @@ class Auth {
   }
 
   public async loginUser(email: string, password: string) {
+    const success = true;
     try {
       const credentials = await signInWithEmailAndPassword(this.getAuth(), email, password);
       if (credentials && credentials.user) {
         this.user = credentials.user;
-        Extra.onAuthChanged();
+        return success;
       }
     } catch (error) {
       console.log(error);
+      return !success;
     }
   }
 
   public async createUser(email: string, password: string) {
+    const success = true;
     try {
       const credentials = await createUserWithEmailAndPassword(this.getAuth(), email, password);
       if (credentials && credentials.user) {
         this.user = credentials.user;
-        Extra.onAuthChanged();
+        return success;
       }
     } catch (error) {
       console.log(error);
+      return !success;
     }
   }
 

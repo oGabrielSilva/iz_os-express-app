@@ -4,6 +4,7 @@ import ModalAlert from './Module/ModalAlert';
 import Colors from './resources/Colors';
 import Extra from './Util/Extra';
 import HtmlConstants from './Util/HtmlConstants';
+import AsideNavBar from './Module/AsideNavBar';
 
 const appIcons = document.querySelectorAll(HtmlConstants.getAppIconId());
 const colors = Colors.getInstance();
@@ -23,8 +24,4 @@ Extra.setModal();
 
 Auth.init();
 ModalAlert.init();
-setTimeout(
-  () =>
-    ModalAlert.openModal('Testando o modal de alert', null, true, true, () => console.log('Oiiie')),
-  3000
-);
+AsideNavBar.init();

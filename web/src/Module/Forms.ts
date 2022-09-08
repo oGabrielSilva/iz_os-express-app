@@ -1,7 +1,10 @@
 import Auth from '../Auth/Auth';
 import FormValid from '../Model/FormValid';
+import strings from '../resources/strings';
+import Extra from '../Util/Extra';
 import HtmlConstants from '../Util/HtmlConstants';
 import Validation from '../Util/Validation';
+import ModalAlert from './ModalAlert';
 
 class Forms {
   private constructor() {}
@@ -96,8 +99,11 @@ class Forms {
       }
     });
 
-    submit.addEventListener('click', () => {
-      Auth.loginUser(emailInput.value, passwordInput.value);
+    submit.addEventListener('click', async () => {
+      ModalAlert.openModal(strings.waitLogin, true);
+      const success = await Auth.loginUser(emailInput.value, passwordInput.value);
+      if (!success) ModalAlert.openModal(strings.loginUserError, null, true, true);
+      else Extra.onAuthChanged();
     });
 
     forgotPassword.addEventListener('click', () => {
@@ -113,7 +119,11 @@ class Forms {
       }
     });
 
-    if (!!googleSignIn) googleSignIn.addEventListener('click', () => Auth.google());
+    if (!!googleSignIn)
+      googleSignIn.addEventListener('click', () => {
+        Auth.google();
+        ModalAlert.openModal(strings.waitGoogleLogin, true);
+      });
     if (!!dontHaveAccount) {
       dontHaveAccount.addEventListener('click', () => (window.location.href = '/sign-up'));
     }
@@ -165,8 +175,11 @@ class Forms {
       }
     });
 
-    submit.addEventListener('click', () => {
-      Auth.createUser(emailInput.value, passwordInput.value);
+    submit.addEventListener('click', async () => {
+      ModalAlert.openModal(strings.waitCreateUser, true);
+      const success = await Auth.createUser(emailInput.value, passwordInput.value);
+      if (!success) ModalAlert.openModal(strings.createUserError, null, true, true);
+      else Extra.onAuthChanged();
     });
 
     if (!!alreadyHaveAccount) {
