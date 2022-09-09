@@ -18,23 +18,27 @@ class Auth {
   private windowLoading: HTMLDivElement;
   private app: FirebaseApp;
   private auth: FirebaseAuth;
-  private user: User | null;
+  private user: User | null = null;
 
-  public init() {
+  public async init() {
     this.windowLoading = document.querySelector(
       HtmlConstants.getWindowLoadingClass()
     ) as HTMLDivElement;
     this.app = initializeApp(browser);
     this.auth = getAuth();
-    this.config();
+    await this.config();
   }
 
-  private config() {
-    onAuthStateChanged(this.auth, (user) => {
-      this.user = user;
-      if (this.windowLoading) this.windowLoading.classList.add('invisible');
-      Extra.onAuthChanged();
+  private async config() {
+    const promise = new Promise<boolean>((resolve) => {
+      onAuthStateChanged(this.auth, (user) => {
+        this.user = user;
+        if (this.windowLoading) this.windowLoading.classList.add('invisible');
+        Extra.onAuthChanged();
+        resolve(!!user);
+      });
     });
+    return promise;
   }
 
   public getUser(): User | null {

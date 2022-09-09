@@ -5,8 +5,10 @@
     </button>
   </div>
   <div class="display-flex">
-    <a href="/profile">
+    <a href="/profile" class="display-flex">
+      <h4 id="profile-name" class="user-name-line"></h4>
       <img
+        id="profile-icon"
         style="border-radius: var(--r3)"
         src="/images/placeholder/profile.svg"
         width="30px"
@@ -14,6 +16,12 @@
         alt="Perfil"
       />
     </a>
-    <button></button>
+    <button class="sign-out">
+      <span
+        style="font-size: 25px; margin-left: 10px"
+        class="material-symbols-outlined icon-button-aside-menu"
+        >logout</span
+      >
+    </button>
   </div>
 </header>

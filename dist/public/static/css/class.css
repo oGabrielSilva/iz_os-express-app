@@ -244,3 +244,11 @@
 .nav-aside-menu ul li span {
   text-align: start;
 }
+
+.user-name-line {
+  overflow: hidden;
+  word-wrap: break-word;
+  display: inline-block;
+  max-height: 1rem;
+  text-align: end;
+}
