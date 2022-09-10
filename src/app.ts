@@ -26,7 +26,7 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-        'img-src': ["'self'"],
+        'img-src': ["'self'", 'lh3.googleusercontent.com'],
       },
     },
   })

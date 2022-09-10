@@ -8,7 +8,7 @@ class AsideNavBarConstants {
   private readonly filesId = '#my-files';
   private readonly draftsId = '#my-drafts';
   private readonly personaId = '#persona';
-  private readonly skillsId = '#skills';
+  private readonly skillsId = '#skill';
   private readonly weaponId = '#weapon';
   private readonly clothingId = '#clothing';
   private readonly otherId = '#other';

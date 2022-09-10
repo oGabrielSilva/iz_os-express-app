@@ -29,6 +29,6 @@
   "private": true,
   "scripts": {
     "dev": "nodemon",
-    "build": "webpack -w --config web/webpack.config.js"
+    "build": "webpack -w --config www/webpack.config.js"
   }
 }

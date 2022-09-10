@@ -1,4 +1,14 @@
 {% extends 'base.njk' %} {% block body %} {% include 'includes/header.njk' %} {% include
 'includes/side-menu.njk' %}
 <input type="hidden" id="wl" value="home" />
+<section>
+  <main>
+    {% include 'includes/home/book.njk' %} {% include 'includes/home/clothing.njk' %} {% include
+    'includes/home/draft.njk' %} {% include 'includes/home/feed.njk' %} {% include
+    'includes/home/file.njk' %} {% include 'includes/home/notification.njk' %} {% include
+    'includes/home/other.njk' %} {% include 'includes/home/persona.njk' %} {% include
+    'includes/home/skill.njk' %} {% include 'includes/home/weapon.njk' %} {% include
+    'includes/home/rpg-sheet.njk' %}
+  </main>
+</section>
 {% endblock %}
