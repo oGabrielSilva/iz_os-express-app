@@ -96,6 +96,28 @@ class Extra {
         return;
     }
   }
+
+  public static async getDataUrl(image: Blob) {
+    const promise = new Promise<string>((resolve, reject) => {
+      try {
+        const file = URL.createObjectURL(image);
+        const img = document.createElement('img');
+        img.src = file;
+        img.onload = (event) => {
+          const canvas = document.createElement('canvas');
+          canvas.width = 150;
+          canvas.height = 150;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(event.target as HTMLImageElement, 0, 0, canvas.width, canvas.height);
+          URL.revokeObjectURL(file);
+          resolve(ctx.canvas.toDataURL());
+        };
+      } catch (error) {
+        reject(error);
+      }
+    });
+    return promise;
+  }
 }
 
 export default Extra;

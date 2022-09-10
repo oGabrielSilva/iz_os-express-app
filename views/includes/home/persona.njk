@@ -1,3 +1,39 @@
 <div id="home-persona" class="invisible">
-  <h1>Persona</h1>
+  <article
+    class="display-flex-column"
+    style="
+      width: calc(100vw - 1.4rem);
+      max-width: 900px;
+      background: var(--bgLight);
+      padding: 1rem;
+      border-radius: var(--r1);
+    "
+  >
+    <div style="width: 100%; display: flex; justify-content: space-between">
+      <h2>Personagem</h2>
+      <button style="background: transparent" title="Apagar tudo">
+        <span
+          class="material-symbols-outlined"
+          style="font-size: 1.5rem; color: var(--variant); background: var(--bgLight)"
+          >backspace</span
+        >
+      </button>
+    </div>
+    <div>
+      <input
+        type="file"
+        accept="image/png, image/jpeg, image/gif"
+        id="photo-persona"
+        class="invisible"
+      />
+      <input
+        style="padding: 1rem"
+        type="image"
+        id="preview"
+        width="150px"
+        height="150px"
+        src="/images/placeholder/profile.svg"
+      />
+    </div>
+  </article>
 </div>

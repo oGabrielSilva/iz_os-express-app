@@ -3,7 +3,7 @@ import Home, { Location } from './Home';
 
 class AsideNavBar {
   constructor(
-    private location: Location = 'Feed',
+    private location: Location = 'Persona',
     private readonly container: HTMLDivElement = document.querySelector(
       AsideNavBarConstants.getContainerClass()
     ),

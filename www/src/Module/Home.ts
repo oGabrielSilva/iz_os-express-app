@@ -1,6 +1,7 @@
 import Auth from '../Auth/Auth';
 import HomeConstants from '../Util/HomeConstants';
 import AsideNavBar from './AsideNavBar';
+import Persona from './home/Persona';
 
 export type Location =
   | 'Feed'
@@ -41,7 +42,8 @@ class Home {
     if (!!this.profileIcon) this.setProfileIcon();
     if (!!this.profileName) this.setProfileName();
     this.onLocationChange();
-    console.log(this);
+
+    Persona.init();
   }
 
   public onLocationChange() {
