@@ -17,7 +17,7 @@ export type Location =
 
 class Home {
   private readonly feed: HTMLDivElement = document.querySelector(HomeConstants.getFeedId());
-  private readonly file: HTMLDivElement = document.querySelector(HomeConstants.getFeedId());
+  private readonly file: HTMLDivElement = document.querySelector(HomeConstants.getFileId());
   private readonly draft: HTMLDivElement = document.querySelector(HomeConstants.getDraftId());
   private readonly persona: HTMLDivElement = document.querySelector(HomeConstants.getPersonaId());
   private readonly skills: HTMLDivElement = document.querySelector(HomeConstants.getSkillId());
@@ -41,12 +41,13 @@ class Home {
     if (!!this.profileIcon) this.setProfileIcon();
     if (!!this.profileName) this.setProfileName();
     this.onLocationChange();
+    console.log(this);
   }
 
   public onLocationChange() {
     const asideLocation = AsideNavBar.getLocation();
     this.allInvisible();
-
+    AsideNavBar.close();
     switch (asideLocation) {
       case 'Feed':
         if (!!this.feed) this.feed.classList.remove('invisible');

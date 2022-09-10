@@ -179,8 +179,7 @@
   opacity: 0.5;
 }
 
-.button-aside-menu,
-.button-aside-menu-selected {
+.button-aside-menu {
   width: 100%;
   background: var(--bgLight);
   border-radius: var(--p3);

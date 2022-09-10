@@ -1,4 +1,5 @@
 class AsideNavBarConstants {
+  private readonly buttonClassSelected = 'button-aside-menu-selected';
   private readonly containerClass = '.aside-menu';
   private readonly containerId = 'aside-menu-id';
   private readonly navClass = '.nav-aside-menu';
@@ -15,8 +16,8 @@ class AsideNavBarConstants {
   private readonly rpgSheetId = '#rpg-sheet';
   private readonly bookId = '#book';
 
-  th() {
-    console.log(this);
+  public getButtonClassSelected() {
+    return this.buttonClassSelected;
   }
 
   public getBookId() {

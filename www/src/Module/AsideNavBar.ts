@@ -67,18 +67,18 @@ class AsideNavBar {
     if (this.container) this.container.style.left = '0';
   }
 
+  public close() {
+    this.container.style.left = '-200vh';
+  }
+
   public getLocation() {
     return this.location;
   }
 
   public setLocation(location: Location) {
     this.location = location;
-
     Home.onLocationChange();
-  }
-
-  private close() {
-    this.container.style.left = '-200vh';
+    this.setButtonSelected();
   }
 
   private addOnClickListeners() {
@@ -105,6 +105,64 @@ class AsideNavBar {
     if (!!this.skills) this.skills.addEventListener('click', () => this.setLocation('Skills'));
     if (!!this.weapon) this.weapon.addEventListener('click', () => this.setLocation('Weapon'));
     if (!!this.other) this.other.addEventListener('click', () => this.setLocation('Other'));
+  }
+
+  private setButtonSelected() {
+    if (!!this.notifications) {
+      this.location === 'Notifications'
+        ? this.notifications.classList.add(AsideNavBarConstants.getButtonClassSelected())
+        : this.notifications.classList.remove(AsideNavBarConstants.getButtonClassSelected());
+    }
+    if (!!this.rpgSheet) {
+      this.location === 'Rpg-Sheet'
+        ? this.rpgSheet.classList.add(AsideNavBarConstants.getButtonClassSelected())
+        : this.rpgSheet.classList.remove(AsideNavBarConstants.getButtonClassSelected());
+    }
+    if (!!this.clothing) {
+      this.location === 'Clothing'
+        ? this.clothing.classList.add(AsideNavBarConstants.getButtonClassSelected())
+        : this.clothing.classList.remove(AsideNavBarConstants.getButtonClassSelected());
+    }
+    if (!!this.feed) {
+      this.location === 'Feed'
+        ? this.feed.classList.add(AsideNavBarConstants.getButtonClassSelected())
+        : this.feed.classList.remove(AsideNavBarConstants.getButtonClassSelected());
+    }
+    if (!!this.book) {
+      this.location === 'Book'
+        ? this.book.classList.add(AsideNavBarConstants.getButtonClassSelected())
+        : this.book.classList.remove(AsideNavBarConstants.getButtonClassSelected());
+    }
+    if (!!this.files) {
+      this.location === 'Files'
+        ? this.files.classList.add(AsideNavBarConstants.getButtonClassSelected())
+        : this.files.classList.remove(AsideNavBarConstants.getButtonClassSelected());
+    }
+    if (!!this.drafts) {
+      this.location === 'Drafts'
+        ? this.drafts.classList.add(AsideNavBarConstants.getButtonClassSelected())
+        : this.drafts.classList.remove(AsideNavBarConstants.getButtonClassSelected());
+    }
+    if (!!this.persona) {
+      this.location === 'Persona'
+        ? this.persona.classList.add(AsideNavBarConstants.getButtonClassSelected())
+        : this.persona.classList.remove(AsideNavBarConstants.getButtonClassSelected());
+    }
+    if (!!this.skills) {
+      this.location === 'Skills'
+        ? this.skills.classList.add(AsideNavBarConstants.getButtonClassSelected())
+        : this.skills.classList.remove(AsideNavBarConstants.getButtonClassSelected());
+    }
+    if (!!this.weapon) {
+      this.location === 'Weapon'
+        ? this.weapon.classList.add(AsideNavBarConstants.getButtonClassSelected())
+        : this.weapon.classList.remove(AsideNavBarConstants.getButtonClassSelected());
+    }
+    if (!!this.other) {
+      this.location === 'Other'
+        ? this.other.classList.add(AsideNavBarConstants.getButtonClassSelected())
+        : this.other.classList.remove(AsideNavBarConstants.getButtonClassSelected());
+    }
   }
 }
 
