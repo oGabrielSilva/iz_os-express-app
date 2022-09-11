@@ -68,7 +68,7 @@ class AsideNavBar {
   }
 
   public close() {
-    this.container.style.left = '-200vh';
+    this.container.style.left = '-200vw';
   }
 
   public getLocation() {

@@ -1,25 +1,12 @@
 <div id="home-persona" class="invisible">
-  <article
-    class="display-flex-column"
-    style="
-      width: calc(100vw - 1.4rem);
-      max-width: 900px;
-      background: var(--bgLight);
-      padding: 1rem;
-      border-radius: var(--r1);
-    "
-  >
+  <form class="display-flex-column form-home">
     <div style="width: 100%; display: flex; justify-content: space-between">
       <h2>Personagem</h2>
-      <button style="background: transparent" title="Apagar tudo">
-        <span
-          class="material-symbols-outlined"
-          style="font-size: 1.5rem; color: var(--variant); background: var(--bgLight)"
-          >backspace</span
-        >
+      <button id="delete-persona" style="background: transparent" title="Apagar tudo">
+        <span class="material-symbols-outlined btn-icon-red">backspace</span>
       </button>
     </div>
-    <div>
+    <div class="margin-top-2">
       <input
         type="file"
         accept="image/png, image/jpeg, image/gif"
@@ -35,5 +22,49 @@
         src="/images/placeholder/profile.svg"
       />
     </div>
-  </article>
+    <div style="width: 100%" class="display-flex-column">
+      <label for="name-persona">
+        <span>Nome</span>
+        <input type="text" id="name-persona" placeholder="Renata Glasc" class="input" />
+      </label>
+    </div>
+    <div style="width: 100%" class="display-flex-column">
+      <label for="title-persona">
+        <span>Título ou apelido</span>
+        <input type="text" id="title-persona" placeholder="Baronesa da Química" class="input" />
+      </label>
+    </div>
+    <div style="width: 80%; justify-content: space-evenly" class="display-flex">
+      <button id="M" class="button-s margin-top-2"><span>Masculino</span></button>
+      <button id="F" class="button-s margin-top-2 button-s-selected">
+        <span>Feminino</span>
+      </button>
+      <button id="O" class="button-s margin-top-2"><span>Outro</span></button>
+    </div>
+    <div style="width: 95%" class="display-flex-column margin-top-3">
+      <div style="width: 100%; justify-content: space-between" class="display-flex">
+        <h3>Atributos</h3>
+        <button id="add-attribute-persona" title="Adicionar atributo">
+          <span class="material-symbols-outlined" style="font-size: 2rem">add</span>
+        </button>
+      </div>
+      <div style="width: 100%" id="attribute-container-persona" class="display-flex-column"></div>
+    </div>
+    <div style="width: 95%" class="display-flex-column margin-top-3">
+      <div style="width: 100%; justify-content: start" class="display-flex">
+        <h3>Introdução</h3>
+      </div>
+      <div style="width: 100%">
+        <textarea id="introduction-persona" class="textarea-2"></textarea>
+      </div>
+    </div>
+    <div style="width: 95%" class="display-flex-column margin-top-3">
+      <div style="width: 100%; justify-content: start" class="display-flex">
+        <h3>Origem</h3>
+      </div>
+      <div style="width: 100%">
+        <textarea id="origin-persona" class="textarea-2"></textarea>
+      </div>
+    </div>
+  </form>
 </div>

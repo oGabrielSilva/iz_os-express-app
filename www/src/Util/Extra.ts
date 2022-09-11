@@ -2,6 +2,7 @@ import Auth from '../Auth/Auth';
 import Colors from '../resources/Colors';
 import HomeConstants from './HomeConstants';
 import HtmlConstants from './HtmlConstants';
+import PersonaConstants from './PersonaConstants';
 
 type WindowLocation = 'index' | 'sign-up' | 'home';
 
@@ -34,6 +35,9 @@ class Extra {
     const themeButton = document.querySelector(HtmlConstants.getButtonChangeThemeId());
     const googleButton = document.querySelector(HtmlConstants.getClassSignInGoogle());
     const profileIcon: HTMLImageElement = document.querySelector(HomeConstants.getProfileIconId());
+    const personaProfilePlaceholder: HTMLInputElement = document.querySelector(
+      PersonaConstants.getPreview()
+    );
 
     if (themeButton && themeButton.querySelector('img')) {
       const src = themeButton.querySelector('img').src;
@@ -48,6 +52,16 @@ class Extra {
     }
     if (!!profileIcon && profileIcon.src.includes('/images/placeholder/profile')) {
       profileIcon.src =
+        mode === 'dark'
+          ? '/images/placeholder/profile-dark.svg'
+          : '/images/placeholder/profile.svg';
+    }
+
+    if (
+      !!personaProfilePlaceholder &&
+      personaProfilePlaceholder.src.includes('/images/placeholder/profile')
+    ) {
+      personaProfilePlaceholder.src =
         mode === 'dark'
           ? '/images/placeholder/profile-dark.svg'
           : '/images/placeholder/profile.svg';

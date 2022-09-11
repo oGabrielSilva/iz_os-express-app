@@ -251,3 +251,68 @@
   max-height: 1rem;
   text-align: end;
 }
+
+.input {
+  width: 100%;
+}
+
+.form-home {
+  width: calc(100vw - 1.4rem);
+  max-width: 900px;
+  background: var(--bgLight);
+  padding: 1rem;
+  border-radius: var(--r1);
+}
+
+.form-home label {
+  width: 80%;
+}
+
+.button-s {
+  padding: var(--p1) var(--p2);
+}
+
+.button-s-selected,
+.button-s-selected * {
+  color: var(--variant);
+  font-weight: 700;
+  transition: 0.1s linear;
+}
+
+.attribute-key {
+  width: 38%;
+  margin-right: 2%;
+  text-align: center;
+}
+
+.attribute-value {
+  margin-right: 2%;
+  width: 58%;
+  text-align: center;
+}
+
+.btn-icon-red {
+  font-size: 1.5rem;
+  color: var(--variant);
+  background: var(--bgLight);
+}
+
+.textarea-1,
+.textarea-2 {
+  width: 100%;
+  background: var(--bg);
+  margin-top: var(--p2);
+  border-radius: var(--r2);
+  resize: vertical;
+  padding: var(--p2);
+  color: var(--textTitle);
+  font-size: 0.9rem;
+}
+
+.textarea-1 {
+  height: 200px;
+}
+
+.textarea-2 {
+  height: 250px;
+}
